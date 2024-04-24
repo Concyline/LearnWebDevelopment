@@ -1,146 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Radio Group Example</title>
+</head>
+<body>
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
+<form>
+    <input type="radio" id="male" name="gender" value="male">
+    <label for="male">Masculino</label><br>
+    
+    <input type="radio" id="female" name="gender" value="female">
+    <label for="female">Feminino</label><br>
+    
+    <input type="radio" id="other" name="gender" value="other">
+    <label for="other">Outro</label><br>
+</form>
 
-        <style>
-            * {
-                margin: 0;
-                padding: 0;
-            }
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    var radioButtons = document.querySelectorAll('input[type="radio"][name="gender"]');
+    
+    // Adiciona um evento de escuta para capturar quando um botão de rádio é clicado
+    radioButtons.forEach(function(radioButton) {
+        radioButton.addEventListener('change', function(event) {
+            console.log('Selecionado:', event.target.value);
+        });
+    });
+});
+</script>
 
-            body {
-                width: 100%;
-                height: 100vh;
-                background: pink;
-
-            }
-
-            main {
-                display: flex;
-            }
-
-            nav {
-                background-color: #333;
-                position: relative;
-                /* Importante para o posicionamento da sublista */
-            }
-
-            ul {
-                list-style-type: none;
-                margin: 0;
-                padding: 0;
-                display: flex;
-                /* Usa flexbox */
-                flex-direction: column;
-                /* Itens da lista são exibidos em coluna */
-                align-items: center;
-                /* Alinha os itens da lista ao centro horizontalmente */
-            }
-
-            li {
-                width: 100%;
-                /* Cada item da lista ocupa toda a largura disponível */
-                cursor: pointer;
-                /* Altera o cursor para o ponteiro ao passar o mouse sobre os itens */
-                position: relative;
-                /* Importante para o posicionamento da sublista */
-            }
-
-            a {
-                display: block;
-                /* Alterado para elemento de bloco */
-                color: white;
-                text-align: center;
-                padding: 14px 16px;
-                text-decoration: none;
-            }
-
-            a:hover {
-                background-color: #111;
-            }
-
-            /* Estilos para sub-listas */
-            ul ul {
-                position: absolute;
-                top: 0;
-                left: 100%;
-                /* Posiciona a sub-lista à direita do item pai */
-                display: none;
-                /* Oculta a sub-lista por padrão */
-                background-color: #555;
-                padding: 10px;
-                width: 200px;
-                /* Largura da sublista */
-                z-index: 999;
-                /* Garante que a sublista esteja acima de outros elementos */
-            }
-
-            li:hover>ul {
-                display: block;
-                /* Exibe a sub-lista quando o item pai é hover */
-            }
-
-            li ul li {
-                display: block;
-                /* Garante que os itens da sub-lista apareçam verticalmente */
-            }
-
-            .barra {
-                background: #333;
-                width: 15%;
-                height: 100vh;
-            }
-
-            .conteudo {
-                width: 85%;
-                height: 100vh;
-            }
-        </style>
-    </head>
-
-    <body>
-
-        <main>
-            <div class="barra">
-                <nav>
-                    <ul>
-                        <li><a href="#">About</a></li>
-                        <li>
-                            <a href="#">Home</a>
-                            <ul>
-                                <li><a href="#">Subitem 1</a></li>
-                                <li><a href="#">Subitem 2</a></li>
-                                <li><a href="#">Subitem 3</a></li>
-                            </ul>
-                        </li>
-                        
-                        <li><a href="#">Services</a></li>
-                        <li><a href="#">Contact</a></li>
-                    </ul>
-                </nav>
-            </div>
-
-            <div class="conteudo">
-                asdkjhaskdhkasdhkashdkashdkajshdkashdkashdkash
-                asdkjhaskdhkasdhkashdkashdkajshdkashdkashdkash
-                asdkjhaskdhkasdhkashdkashdkajshdkashdkashdkash
-                asdkjhaskdhkasdhkashdkashdkajshdkashdkashdkash
-                asdkjhaskdhkasdhkashdkashdkajshdkashdkashdkash
-                asdkjhaskdhkasdhkashdkashdkajshdkashdkashdkash
-                asdkjhaskdhkasdhkashdkashdkajshdkashdkashdkash
-                asdkjhaskdhkasdhkashdkashdkajshdkashdkashdkash
-                asdkjhaskdhkasdhkashdkashdkajshdkashdkashdkash
-                asdkjhaskdhkasdhkashdkashdkajshdkashdkashdkash
-                asdkjhaskdhkasdhkashdkashdkajshdkashdkashdkash
-                asdkjhaskdhkasdhkashdkashdkajshdkashdkashdkash
-            </div>
-        </main>
-
-
-    </body>
-
+</body>
 </html>

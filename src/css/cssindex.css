@@ -33,7 +33,7 @@ main{
 
 .barra_lateral {    
     background: #343746;
-    width: 15%;
+    width: 10%;
     height: calc(100vh - 70px);
 
     transition: transform 0.1s ease-in-out;
@@ -57,8 +57,9 @@ main{
 }
 
 #content{
-    width: 85%;
+    width: 90%;
     color: #FFF;
+    padding: 20px;
 
     transition: transform 0.1s ease-in-out;
 }

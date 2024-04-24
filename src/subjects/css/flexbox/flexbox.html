@@ -1,11 +1,165 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FlexBox</title>
-</head>
-<body>
-    Flex
-</body>
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>FlexBox</title>
+
+        <script src="./src/js/actions.js"></script>
+
+        <style>
+            .header {
+                width: 100%;
+                display: flex;
+                flex-wrap: wrap;
+                align-content: flex-start;
+            }
+
+            .unit {
+                width: 15%;
+            }
+
+            .container {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: nowrap;
+                justify-content: flex-start;
+                align-items: flex-start;
+                align-content: flex-start;
+
+                width: 100%;
+                height: 80%;
+                border: solid 1px #FFF;
+                border-radius: 10px;
+                padding: 10px;
+                margin-top: 30px;
+            }
+
+            .box {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 80px;
+                height: 80px;
+                border: solid 1px #FFF;
+                border-radius: 10px;
+                margin: 10px;
+                box-shadow: 5px 5px 20px 0 #FFFFFF50;
+            }
+
+            fieldset {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                border: solid 2px #FFF;
+                border-radius: 5px;
+                min-height: 50px;
+            }
+
+            .titleFieldset {
+                width: 100px;
+                position: relative;
+                margin-top: -15px;
+                margin-left: 10px;
+                text-align: center;
+                background: #21222C;
+                padding-left: 10px;
+                padding-right: 10px;
+            }
+
+            .ml-p {
+                margin-left: 6px;
+            }
+
+            .ml-m {
+                margin-left: 15px;
+            }
+
+            
+        </style>
+
+    </head>
+
+    <body>
+
+
+        <div class="header">
+
+            <div class="form-floating unit" data-bs-theme="dark">
+                <select class="form-select" id="displaySelect" onclick="displaySelected()" aria-label="Floating label select example">
+                    <option selected value="flex">flex</option>
+                    <option value="block">block</option>
+                </select>
+                <label for="floatingSelect">display</label>
+            </div>
+
+            <div class="form-floating unit ml-m" data-bs-theme="dark">
+                <select class="form-select" id="directionSelect" onclick="directionSelect()" aria-label="Floating label select example">
+                    <option selected value="row">row</option>
+                    <option value="row-reverse">row-reverse</option>
+                    <option value="column">column</option>
+                    <option value="column-reverse">column-reverse</option>
+                </select>
+                <label for="floatingSelect">flex-direction</label>
+            </div>
+
+            <div class="form-floating unit ml-m" data-bs-theme="dark">
+                <select class="form-select" id="wrapSelect" onclick="wrapSelect()" aria-label="Floating label select example">
+                    <option selected value="nowrap">nowrap</option>
+                    <option value="wrap">wrap</option>
+                    <option value="wrap-reverse">wrap-reverse</option>
+                </select>
+                <label for="floatingSelect">flex-wrap</label>
+            </div>
+
+            <div class="form-floating unit ml-m" data-bs-theme="dark">
+                <select class="form-select" id="justifySelect" onclick="justifySelect()" aria-label="Floating label select example">
+                    <option selected value="flex-start">flex-start</option>
+                    <option value="flex-end">flex-end</option>
+                    <option value="center">center</option>
+                    <option value="space-between">space-between</option>
+                    <option value="space-around">space-around</option>
+                    <option value="space-evenly">space-evenly</option>
+                </select>
+                <label for="floatingSelect">justify-content</label>
+            </div>
+
+            <div class="form-floating unit ml-m" data-bs-theme="dark">
+                <select class="form-select" id="alignSelect" onclick="alignSelect()" aria-label="Floating label select example">
+                    <option selected value="flex-start">flex-start</option>
+                    <option value="stretch">stretch</option>
+                    <option value="center">center</option>
+                    <option value="flex-end">flex-end</option>
+                    <option value="baseline">baseline</option>
+                </select>
+                <label for="floatingSelect">align-items</label>
+            </div>
+
+            <div class="form-floating unit ml-m" data-bs-theme="dark">
+                <select class="form-select" id="alignContentSelect" onclick="alignContentSelect()" aria-label="Floating label select example">
+                    <option selected value="flex-start">flex-start</option>
+                    <option value="flex-end">flex-end</option>
+                    <option value="center">center</option>
+                    <option value="space-between">space-between</option>
+                    <option value="space-around">space-around</option>
+                    <option value="space-evenly">space-evenly</option>
+                </select>
+                <label for="floatingSelect">align-content</label>
+            </div>
+
+        </div>
+
+        <div id="container" class="container">
+
+            <div class="box">1</div>
+            <div style="order: 1;" class="box">2</div>
+            <div style="flex-grow: 1;" class="box">3</div>
+            <div style="flex-grow: 2;"  class="box">4</div>
+            <div class="box">5</div>
+
+        </div>
+
+    </body>
+
 </html>
